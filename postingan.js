@@ -10,9 +10,9 @@ const storage = multer.diskStorage({
 })
 
 cloudinary.config({
-    cloud_name: 'doepyv0yh',
-    api_key: '438957659325398',
-    api_secret: 'kHIzvwHEB7FK_xrBDICSrHW3sJY',
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET,
     secure: true,
 });
   
