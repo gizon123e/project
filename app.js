@@ -39,7 +39,7 @@ app.get('/', async (req, res)=>{
         const sliderKedua = await SliderKedua.findOne({})
         const adaKata = await Kata.findOne({})
         const adaPertanyaan = await Pertanyaan.findOne({})
-        if(sliderPertama || !sliderKedua || !adaKata || !adaPertanyaan){
+        if(!sliderPertama || !sliderKedua || !adaKata || !adaPertanyaan){
             res.render('index',{
                 sliderPertama: undefined,
                 framePertama: undefined,
