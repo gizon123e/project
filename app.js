@@ -9,19 +9,16 @@ const {uploadPost, upload_postingan} = require('./postingan')
 const { User, Foto, Kata, Pertanyaan, SliderPertama, SliderKedua } = require('./model');
 const flash = require('connect-flash')
 require('./passport.js')
-mongoose.connect(process.env.MONGO_URI,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 5000, // Waktu tunggu seleksi server dalam milidetik
-    socketTimeoutMS: 45000, // Waktu tunggu soket dalam milidetik
-    retryWrites: true,
-  })
-  .then(() => {
-    console.log('berhasil terhubung ke MongoDB');
-  })
-  .catch((error) => {
-    console.error('Kesalahan koneksi MongoDB:', error);
-  });
+async function main() {
+    await mongoose.connect('process.env.MONGO_URI')
+        .then(()=>{
+            console.log('berhasil terhubung')
+        })
+        .catch((error)=>{
+            console.log('Kesalahan koneksi mongoDB ' + error);
+        })
+}
+main()
 
 app.set("views", "views");
 app.set('view engine', 'ejs');
