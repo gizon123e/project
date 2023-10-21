@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 async function main() {
-    await mongoose.connect('mongodb+srv://muhammadnurfisyalt:isal070705@cluster0.r4zv3uh.mongodb.net/content?retryWrites=true&w=majority')
+    await mongoose.connect(process.env.MONGO_URI)
         .then(()=>{
             console.log('berhasil terhubung')
         })
