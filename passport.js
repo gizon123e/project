@@ -2,8 +2,10 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const CryptoJS = require("crypto-js");
 const { User } = require('./model'); // Import model Password
+const connect = require('./db')
 
 const verifyCallback = async (username, password, done) => {
+  const connection = await connect();
   const found = await User.findOne({
     username,
   })
