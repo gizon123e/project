@@ -10,7 +10,7 @@ const { User, Foto, Kata, Pertanyaan, SliderPertama, SliderKedua } = require('./
 const flash = require('connect-flash')
 require('./passport.js')
 async function main() {
-    await mongoose.connect('process.env.MONGO_URI')
+    await mongoose.connect(process.env.MONGO_URI)
         .then(()=>{
             console.log('berhasil terhubung')
         })
