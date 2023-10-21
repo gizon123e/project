@@ -9,7 +9,7 @@ const {uploadPost, upload_postingan} = require('./postingan')
 const { User, Foto, Kata, Pertanyaan, SliderPertama, SliderKedua } = require('./model');
 const flash = require('connect-flash')
 require('./passport.js')
-mongoose.connect('process.env.MONGO_URI')
+mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('berhasil terhubung ke MongoDB');
   })
