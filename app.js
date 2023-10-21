@@ -63,15 +63,7 @@ app.get('/', async (req, res)=>{
     }
 })
 app.get('/admin', (req, res)=>{
-    if(!req.isAuthenticated()){
-        res.send(
-            `Kamu belum login, ini website private. 
-            Masukkan dulu credential 
-            <a href="/login" style="font-weight: Bold; text-decoration: none; color: black;">LOGIN</a>`
-        )
-    }else{
-        res.render('admin')
-    }
+    res.render('admin')
 })
 app.post('/admin/kata', async(req, res)=>{
     try{
