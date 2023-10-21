@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Oldenburg&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Gochi+Hand');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Jua", sans-serif;
+}
+section#hero1{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F7E4DF;
+}
+#img1{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#img2{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#img3{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+#img4{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+#img5{
+  position: absolute;
+  bottom: 0;
+}
+.hey{
+  position: absolute;
+  top: 50px;
+  text-align: center;
+}
+.hey h1{
+  font-size: 27px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: unset;
+}
+.hey h2{
+  font-size: 43px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.ucapan{
+  width: 650px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ucapan h1{
+  text-align: start;
+  font-size: 76px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+.ucapan h2{
+  font-size: 36px;
+  font-weight: unset;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.ucapan h3{
+  font-weight: unset;
+  font-size: 26px;
+  color: #000000 !important;
+}
+.ucapan h1,
+.ucapan h2,
+.ucapan h3{
+  font-family: 'Oldenburg', serif;
+  color: #103362;
+}
+/*SECTION 2*/
+section#hero2{
+  width: 100%;
+  height: 1000px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #9ED2BE;
+}
+#happy{
+  margin-top: 20px;
+  transform: rotate(-4deg);
+  margin-bottom: 20px;
+}
+.textBox{
+  margin-top: 40px;
+  width: 500px;
+  height: fit-content;
+  transform: rotate(-4deg);
+}
+.textBox p{
+  font-family: 'Jua', sans-serif;
+  text-align: center;
+  font-size: 23px;
+  color: black;
+}
+section#hero2 .swiper {
+  transform: rotate(-4deg);
+  width: 95%;
+  height: 60%;
+  overflow: hidden;
+}
+.swiper:hover{
+  cursor: pointer;
+}
+.swiper-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+/*SLIDER FRAME*/
+.slider1-frame{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    z-index: 2;
+}
+.innerCard{
+  border: 2px solid black;
+  position: absolute;
+  top: 0;
+  width: 95%;
+  height: 100%;
+}
+.innerCard img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+/*SECTION 3*/
+section#hero3{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #6d86dd;
+  background-image: url(images/bg2.png);
+  position: relative;
+}
+section#hero3 .swiper {
+  width: 100%;
+  height: 100%;
+}
+section#hero3 .swiper-button-next, 
+section#hero3 .swiper-button-prev{
+  color: black;
+}
+.love_icon{
+  position: absolute;
+  left: 70px;
+  top: 30px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+.loves{
+  height: 80px;
+  width: 130px;
+  object-fit: cover;
+  position: absolute;
+  bottom: 30px;
+}
+.textBox3{
+  width: 45%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.textBox3 p{
+  font-size: 2vw;
+  position: relative;
+  text-align: justify;
+  letter-spacing: 2px;
+  z-index: 3;
+}
+.showRight-animate{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #6d86dd;
+  transition: 2s;
+}
+.textBox3 p.show-animate .showRight-animate{
+  width: 0;
+}
+/*SECTION HERO 4*/
+section#hero4{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #BEADFA;
+  position: relative;
+  z-index: 2;
+}
+section#hero4 .swiper {
+  width: 98%;
+  margin-top: 60px;
+}
+
+section#hero4 .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 250px;
+  height: 300px;
+  position: relative;
+}
+section#hero4 .swiper-slide img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 2;
+}
+#our_moment{
+  transform: rotate(-4deg);
+  position: absolute;
+  top: 20px;
+  width: 400px;
+  height: 125px;
+  object-fit: contain;
+}
+.innerPict{
+  display: block;
+  position: absolute;
+  width: 225px;
+  height: 265px;
+}
+.innerPict img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* QUESTION SECTION */
+
+#question{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e8e8e8;
+}
+
+#question h1{
+  margin-top: 20px;
+  font-family: 'Nunito', serif;
+}
+/* INPUT */
+.input-wrapper{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.input-wrapper label{
+  text-transform: capitalize;
+}
+.input-wrapper input {
+  margin-top: 10px;
+  background-color: #eee;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  width: 100%;
+  border-radius: 1rem;
+  color: lightcoral;
+  box-shadow: 0 0.4rem #dfd9d9;
+  cursor: pointer;
+}
+.input-wrapper:last-child{
+  margin-bottom: 40px;
+}
+
+.input-wrapper input:focus {
+  outline-color: lightcoral;
+}
+
+@media(max-width: 500px){ 
+    section#hero1{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    #img1, #img2{
+      width: 50%;
+      height: 75px;
+      object-fit: contain;
+    }
+    #img3, #img4{
+      width: 75px;
+      height: 75px;
+      object-fit: contain;
+    }
+    #img5{
+      width: 150px;
+      object-fit: contain;
+    }
+    .hey{
+      position: unset;
+    }
+    .hey h1,
+    .hey h2{
+      font-size: 25px;
+    }
+    .ucapan{
+      width: 100%;
+      height: 415px;
+    }
+    .ucapan h1{
+      font-size: 68px;
+    }
+    .ucapan h2{
+      font-size: 30px;
+    }
+    .ucapan h1, .ucapan h2, .ucapan h3 {
+      text-align: center;
+    }
+    /*SECTION 2*/
+    section#hero2{
+      width: 100%;
+      height: 800px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #9ED2BE;
+    }
+    #happy{
+      margin-top: unset;
+      width: 85%;
+    }
+    section#hero2 .swiper{
+      width: 90%;
+    }
+    section#hero2 .swiper-wrapper{
+      height: 90%;
+    }
+    section#hero2 .swiper-slide {
+      position: relative; 
+      width: fit-content !important;
+      text-align: center;
+      font-size: 18px;
+      background-color: #9ED2BE;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+    section#hero2 .slider1-frame{
+      width: unset;
+      position: absolute;
+      top: 0;
+      object-fit: contain;
+    }
+    section#hero2 .innerCard{
+      width: 80%;
+      height: 90%;
+      position: unset;
+    }
+    /* SECTION 3 */
+    section#hero3{
+      height: 600px;
+    }
+    section#hero3 .swiper{
+      height: 40%;
+    }
+    section#hero3 .swiper-slide{
+      height: 100%;
+      width: 100%;
+    }
+    .textBox3{
+      width: 80%;
+      height: 80%;
+    }
+    .textBox3 p{
+      font-weight: bold;
+      font-size: 17px;
+    }
+    section#hero3 .swiper-button-next, 
+    section#hero3 .swiper-button-prev{
+      display: none;
+    }
+    .love_icon{
+      width: 100px;
+      height: 100px;
+    }
+    section#hero4{
+      height: 600px;
+    }
+    #our_moment{
+      width: 80%;
+    }
+}
