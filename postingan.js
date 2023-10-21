@@ -10,9 +10,9 @@ const storage = multer.diskStorage({
 })
 
 cloudinary.config({
-    cloud_name: 'doepyv0yh',
-    api_key: '438957659325398',
-    api_secret: 'kHIzvwHEB7FK_xrBDICSrHW3sJY',
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET,
     secure: true,
 });
   
@@ -23,8 +23,6 @@ const upload_postingan = async (req, res) =>{
         const connection = await connect();
         const firstSlider = []
         const secondSlider = []
-        const postingan1 = req.files['sliderPertama'];
-        const postingan2 = req.files['sliderKedua']
 
         const uploadImages = async(images, arrayTujuan) => {
             try{
@@ -39,9 +37,9 @@ const upload_postingan = async (req, res) =>{
             console.log(`Semua gambar telah diunggah`)
         }
 
-        if (postingan1) {
+        if (req.files['sliderPertama']) {
             const existingData = await SliderPertama.findOne({});
-            await uploadImages(postingan1, firstSlider);
+            await uploadImages(req.files['sliderPertama'], firstSlider);
           
             if (!existingData) {
               const foto = new SliderPertama({
@@ -59,10 +57,10 @@ const upload_postingan = async (req, res) =>{
             }else{
                 await SliderPertama.findOneAndUpdate({},{$set: {foto: firstSlider}})
             }
-        } else if (postingan2) {
+        } else if (req.files['sliderKedua']) {
             const existingData = await SliderKedua.findOne({});
 
-            await uploadImages(postingan2, secondSlider);
+            await uploadImages(req.files['sliderKedua'], secondSlider);
           
             if (!existingData) {
               const foto = new SliderKedua({
