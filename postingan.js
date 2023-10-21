@@ -10,9 +10,9 @@ const storage = multer.diskStorage({
 })
 
 cloudinary.config({
-    cloud_name: process.env.CLOUD_NAME,
-    api_key: process.env.API_KEY,
-    api_secret: process.env.API_SECRET,
+    cloud_name: 'doepyv0yh',
+    api_key: '438957659325398',
+    api_secret: 'kHIzvwHEB7FK_xrBDICSrHW3sJY',
     secure: true,
 });
   
@@ -20,6 +20,7 @@ const uploadPost = multer({ storage })
 
 const upload_postingan = async (req, res) =>{
     try{
+        const connection = await connect();
         const firstSlider = []
         const secondSlider = []
         const postingan1 = req.files['sliderPertama'];
