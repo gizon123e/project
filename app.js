@@ -11,14 +11,8 @@ const flash = require('connect-flash')
 require('./passport.js')
 async function main() {
     await mongoose.connect(process.env.MONGO_URI)
-        .then(()=>{
-            console.log('berhasil terhubung')
-        })
-        .catch((error)=>{
-            console.log('Kesalahan koneksi mongoDB ' + error);
-        })
 }
-main()
+main().catch(err => console.log(err));
 
 app.set("views", "views");
 app.set('view engine', 'ejs');
