@@ -1,6 +1,7 @@
 const multer  = require('multer')
 const {  SliderPertama ,SliderKedua } = require('./model'); // Import model User
 const cloudinary = require('cloudinary').v2;
+const connect = require('./db')
 
 const storage = multer.diskStorage({
     filename: function (req, file, cb) {
