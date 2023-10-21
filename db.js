@@ -6,4 +6,5 @@ async function main() {
             console.log('berhasil terhubung')
         })
 }
-main()
+
+module.exports = main
