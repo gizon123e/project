@@ -77,14 +77,14 @@ app.post('/send-email', (req, res)=>{
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-          user: 'muhammadnurfisyalt@gmail.com',
-          pass: 'shkn xihs bdoj hkgc'
+          user: process.env.EMAIL,
+          pass: process.env.PASS
         }
     });
 
     const mailOptions = {
-        from: 'muhammadnurfisyalt@gmail.com',
-        to: 'isal070705@gmail.com',
+        from: process.env.EMAIL,
+        to: process.env.RECEIVER_EMAIL,
         text: hasil
     }
 
