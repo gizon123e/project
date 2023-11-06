@@ -1,6 +1,8 @@
 const express = require('express')
 const passport = require('passport')
 const CryptoJS = require('crypto-js')
+const nodemailer = require('nodemailer');
+const notifier = require('node-notifier');
 const app = express()
 const session = require('express-session');
 const login = require('./loginRoute')
@@ -8,7 +10,7 @@ const {uploadPost, upload_postingan} = require('./postingan')
 const { User, Foto, Kata, Pertanyaan, SliderPertama, SliderKedua } = require('./model');
 const flash = require('connect-flash')
 require('./passport.js')
-const connect = require('./db')
+const db = require('./db')
 
 
 app.set("views", "views");
@@ -33,7 +35,6 @@ app.get('/', async (req, res)=>{
             <a href="/login" style="font-weight: Bold; text-decoration: none; color: black;">LOGIN</a>`
         )
     }else{
-        const connection = await connect();
         const successMessage = req.flash('success'); // Mengambil pesan flash pertama
         const sliderPertama = await SliderPertama.findOne({})
         const sliderKedua = await SliderKedua.findOne({})
@@ -65,6 +66,44 @@ app.get('/', async (req, res)=>{
 app.get('/admin', (req, res)=>{
     res.render('admin')
 })
+
+app.post('/send-email', (req, res)=>{
+    const jawaban = req.body.text
+    const pertanyaan = req.body.question
+
+    const hasil = `Halo Fuad, ini ada jawaban jawaban dari pertanyaan mu\n${pertanyaan.map((e, i) => `${e}: ${jawaban[i]}`).join('\n')}`
+    console.log(hasil)
+
+    const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+          user: 'muhammadnurfisyalt@gmail.com',
+          pass: 'shkn xihs bdoj hkgc'
+        }
+    });
+
+    const mailOptions = {
+        from: 'muhammadnurfisyalt@gmail.com',
+        to: 'isal070705@gmail.com',
+        text: hasil
+    }
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          console.error(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+            // Tampilkan notifikasi
+            notifier.notify({
+                title: 'Email Status',
+                message: 'Email berhasil terkirim!'
+            });
+            res.redirect('/')
+        }
+    });
+    
+})
+
 app.post('/admin/kata', async(req, res)=>{
     try{
         const connection = await connect();
@@ -134,6 +173,9 @@ app.post('/signup', async (req, res)=>{
 })
 app.use('/login', login)
 
-app.listen(3000, function () {
-    console.log('Listening on http://localhost:3000');
-});
+db()
+  .then(()=>{
+    app.listen(3000, function () {
+      console.log('Listening on http://localhost:3000');
+    });
+  })

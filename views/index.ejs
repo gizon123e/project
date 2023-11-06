@@ -95,14 +95,24 @@
     </section>
     <section id="question">
       <h1>SESI PERTANYAAN</h1>
-      <% if(pertanyaan) {%>
-        <% pertanyaan.forEach((e)=>{ %>
-          <div class="input-wrapper">
-            <label for="input"><%= e %></label>
-            <input type="text" placeholder="Type here..." name="text" class="input">
-          </div>
-        <% }) %>
-      <% } %>
+      <form action="/send-email" method="post">
+        <% if(pertanyaan) { %>
+          <% pertanyaan.forEach((e) => { %>
+            <% if (e.trim().length > 0) { %>
+              <div class="input-wrapper">
+                <label for="input"><%= e %></label>
+                <input type="text" name="question" style="display: none;" placeholder="" value="<%= e %>">
+                <input type="text" name="text" id="input" class="input" placeholder="type answer...">
+              </div>
+            <% } %>
+          <% }) %>
+        <% } %>
+        <button>
+          <span class="box">
+              Submit
+          </span>
+        </button>
+      </form>
     </section>
   </body>
   <script>
