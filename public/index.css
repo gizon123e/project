@@ -474,11 +474,6 @@ button {
       height: 90%;
       position: unset;
     }
-
-  #hero2 form{
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: repeat(2, 1fr);
-  }
     /* SECTION 3 */
     section#hero3{
       height: 600px;
