@@ -152,7 +152,6 @@ app.get('/signup', (req, res)=>{
 })
 app.post('/signup', async (req, res)=>{
     try {
-        const connection = await connect();
         const {username, password} = req.body;
         // password = CryptoJS.AES.encrypt(password, 'secret key 123').toString() // Pastikan password dienkripsi dengan benar di sini
         // Buat pengguna baru
