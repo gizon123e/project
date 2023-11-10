@@ -106,7 +106,6 @@ app.post('/send-email', (req, res)=>{
 
 app.post('/admin/kata', async(req, res)=>{
     try{
-        const connection = await connect();
         const adaKata = await Kata.findOne({})
         if(!adaKata){
             const kata_kata = new Kata({
@@ -128,7 +127,6 @@ app.post('/admin/kata', async(req, res)=>{
 })
 app.post('/admin/question', async(req, res)=>{
     try{
-        const connection = await connect();
         const questions = await Pertanyaan.findOne({})
         if(!questions){
             const pertanyaan = new Pertanyaan({
